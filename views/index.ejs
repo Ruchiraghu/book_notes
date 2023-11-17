@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Book</title>
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="box">
+
+        <div class="book">
+            
+            <form class="edit" action="/add" method="post">
+                <input class="search btn btn-light" type="text" name="newTitle" placeholder="Title">
+                <input class="search btn btn-light" type="text" name="newIsbn" placeholder="Book Isbn" autocomplete="off">
+                <input class="search btn btn-light" type="text" name="newDescription" placeholder="Description" autocomplete="off">
+                <input class="search btn btn-light" type="text" name="newRating" placeholder="Rating" autocomplete="off">
+                <button  class="btn btn-secondary" type="submit" name="list">Submit</button>
+            </form>   
+
+        </div>
+        <div class="container">
+        <ol>
+            <% for (let book of bookItems) { %>
+                <div class="abook">
+                    <h1 class="book-details"><%=book.title%></h1><br>
+                    <p class="rating" name="newRating">Rating: <%=book.rating%></p>
+                    <img class="cover" src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="Book Cover"/>
+                    <p class="book-details"><%=book.description%></p></div>
+                    <!-- Delete a book -->
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="isbn" value="<%= book.isbn %>">
+                        <button class="del btn btn-secondary" type="submit" class="delete" name="delete">Delete</button>
+                    </form>
+                 
+                   
+            <% } %>
+        </ol>
+    </div>
+    </div>
+</body>
+</html>

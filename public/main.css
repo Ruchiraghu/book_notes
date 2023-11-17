@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url('img.jpg');
+    background-size: cover;
+}
+
+div{
+    display: inline-block;
+
+}
+p{
+    width: 50%;
+    margin-left: 10%;
+
+}
+
+.edit{
+    margin-bottom: 20px;
+}
+.abook {
+    margin-bottom: 40px; }
+
+.cover{
+    float:left;
+  width: 100px;
+  height: auto;
+}
+
+.book-details {
+    flex: 1; 
+    margin-top: auto;
+}
+.search{
+    border-radius: 5px;
+    display: inline;
+    margin: 10px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: black;
+}
+.del{
+    margin-bottom: 30px;
+}
+.rating{
+    font-weight: bolder;
+    
+}
+
